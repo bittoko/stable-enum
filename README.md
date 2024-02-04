@@ -45,11 +45,12 @@ State data is initialized outside of the class using an init function.
 Enum entries must be a fixed size. The size is configured during state initialization.
 
 ```
-stable let state = Enum.State.init({ size = 122 });
+stable let state = Enum.State.init({ size = 3 });
 let e = Enum.Enumeration( state );
 e.add("\00\01\02"); // -> #ok(0)
 e.add("\00\00\00"); // -> #ok(1)
 e.add("\00\01\02"); // -> #ok(0)
+e.add("\00\01"); // -> #err(#size_error("received: 2; expected: 3"))
 e.lookup("\00\00\00"); // -> ?1
 e.get(0); // -> "\00\01\02"
 e.get(1); // -> "\00\00\00"
