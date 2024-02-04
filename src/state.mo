@@ -1,9 +1,13 @@
-import { new; grow } "mo:base/Region";
-import { trap } "mo:base/Debug";
+import StableBuffer "mo:stable-buffer";
 import T "types";
-import C "const";
 
 module {
 
+  public type InitParams = { size : Nat64 };
+
+  public func init(params: InitParams): T.State = {
+    buffer_state = StableBuffer.State.init({size = params.size; capacity=1});
+    var tree = null;
+  };
 
 };

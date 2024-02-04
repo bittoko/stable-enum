@@ -1,10 +1,18 @@
 [package]
 name = "stable-enum"
 version = "1.0.0"
-description = "MR Research AG enumeration lib implemented in stable memory regions"
+description = "Enumerations implemented in stable memory regions"
 repository = "https://github.com/bittoko/stable-enum"
-keywords = [ "set", "bijective", "map", "lookup", "key", "enumeration" ]
+keywords = [
+  "enumeration",
+  "stable",
+  "memory",
+  "region",
+  "lookup",
+  "enum"
+]
 license = "Apache-2.0"
 
 [dependencies]
 base = "0.10.4"
+stable-buffer = "1.0.1"
